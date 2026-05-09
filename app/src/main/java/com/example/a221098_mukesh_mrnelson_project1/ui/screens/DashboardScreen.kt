@@ -18,7 +18,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.example.a221098_mukesh_mrnelson_project1.ui.navigation.Screen
 import com.example.a221098_mukesh_mrnelson_project1.viewmodel.CodeCardViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -32,14 +31,36 @@ fun DashboardScreen(viewModel: CodeCardViewModel, navController: NavController) 
     ) {
         Spacer(modifier = Modifier.height(24.dp))
 
-        // Header (Aesthetic)
-        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
             Column {
-                Text("Welcome back,", style = MaterialTheme.typography.labelLarge, color = Color.Gray)
-                Text("Mukesh - A221098", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.ExtraBold)
+                // The Product Brand
+                Text(
+                    text = "FlashTech",
+                    style = MaterialTheme.typography.headlineMedium,
+                    fontWeight = FontWeight.Black,
+                    color = Color(0xFF5D5F96)
+                )
+                Text(
+                    text = "Project: A221098_Mukesh_MrNelson_Project1",
+                    style = MaterialTheme.typography.labelSmall,
+                    color = Color.Gray,
+                    letterSpacing = 0.5.sp
+                )
             }
-            Surface(shape = CircleShape, color = Color(0xFF5D5F96), modifier = Modifier.size(44.dp)) {
-                Box(contentAlignment = Alignment.Center) { Text("M", color = Color.White, fontWeight = FontWeight.Bold) }
+
+            // Your Profile Avatar
+            Surface(
+                shape = CircleShape,
+                color = Color(0xFF5D5F96),
+                modifier = Modifier.size(44.dp)
+            ) {
+                Box(contentAlignment = Alignment.Center) {
+                    Text("M", color = Color.White, fontWeight = FontWeight.Bold)
+                }
             }
         }
 
@@ -75,11 +96,15 @@ fun DashboardScreen(viewModel: CodeCardViewModel, navController: NavController) 
         Text("Your Deck List", fontWeight = FontWeight.Bold, style = MaterialTheme.typography.titleSmall)
         Spacer(modifier = Modifier.height(12.dp))
 
-        LazyColumn(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-            // WE USE THE FILTERED LIST HERE
+        LazyColumn(
+            verticalArrangement = Arrangement.spacedBy(10.dp),
+            modifier = Modifier.weight(1f) // Allows list to take available space
+        ) {
             items(viewModel.filteredList) { card ->
                 Surface(
-                    modifier = Modifier.fillMaxWidth().clickable { navController.navigate("detail/${card.id}") },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable { navController.navigate("detail/${card.id}") },
                     shape = RoundedCornerShape(16.dp),
                     color = Color.White,
                     shadowElevation = 1.dp
@@ -92,5 +117,7 @@ fun DashboardScreen(viewModel: CodeCardViewModel, navController: NavController) 
                 }
             }
         }
+
+        Spacer(modifier = Modifier.height(80.dp)) // Padding for Bottom Bar
     }
 }
