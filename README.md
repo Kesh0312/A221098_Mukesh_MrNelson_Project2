@@ -12,8 +12,8 @@ Students and lifelong learners often face "Information Overload" when studying t
 
 3. Proposed Solution (App Idea):
 The FlashTech app provides a high-fidelity digital learning environment. The solution allows users to:
-•	Digitize Notes: Convert complex topics into manageable flashcards.
-•	Prioritize Learning: Assign a priority level (1–5) to each card based on difficulty.
-•	Time Management (Data Processing): The app automatically calculates an "Estimated Study Time" based on the total weight of the card priorities.
-•	Organized Retrieval: Use real-time search functionality to quickly access specific study materials, ensuring a focused and efficient learning experience.
+1. Digitize Notes: Convert complex topics into manageable flashcards.
+2. Prioritize Learning: Assign a priority level (1–5) to each card based on difficulty.
+3. Time Management (Data Processing): The app automatically calculates an "Estimated Study Time" based on the total weight of the card priorities.
+4. Organized Retrieval: Use real-time search functionality to quickly access specific study materials, ensuring a focused and efficient learning experience.
 
