@@ -2,14 +2,18 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.ksp)
+
+    // CRITICAL FIX: Apply the Google Services plugin here to link your json file!
+    id("com.google.gms.google-services")
 }
 
 android {
-    namespace = "com.example.a221098_mukesh_mrnelson_project1"
+    namespace = "com.example.a221098_mukesh_mrnelson_project2"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.a221098_mukesh_mrnelson_project1"
+        applicationId = "com.example.a221098_mukesh_mrnelson_project2"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -50,6 +54,18 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.navigation.compose)
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.5")
+    implementation("com.google.android.gms:play-services-location:21.3.0")
+// Retrofit network communication libraries
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    // Firebase Setup
+    implementation(platform("com.google.firebase:firebase-bom:33.1.0"))
+    implementation("com.google.firebase:firebase-firestore")
+
+    // Room Database Setup
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

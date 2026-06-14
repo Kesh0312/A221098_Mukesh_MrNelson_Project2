@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "942870952489",
+    "project_id": "a221098-codecards-project2",
+    "storage_bucket": "a221098-codecards-project2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:942870952489:android:b60ac7b64038aa85be7a38",
+        "android_client_info": {
+          "package_name": "com.example.a221098_mukesh_mrnelson_project2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCd1HC8WcMjeClmLSLOtwMkrebMOxJYQkY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
